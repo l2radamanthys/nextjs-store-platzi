@@ -38,10 +38,10 @@ export const getMainProducts = async () => {
       headers: new Headers({
         "X-Shopify-Access-Token": env.SHOPIFY_TOKEN,
       }),
-      // next: {
-      //   revalidate: 10,
-      // },
-      cache: "no-cache",
+      cache: "force-cache",
+      next: {
+        tags: ["main-products"],
+      }
     });
     const { products } = await response.json();
     return products;
