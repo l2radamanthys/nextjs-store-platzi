@@ -9,7 +9,5 @@ export default function Category(props: CategoryProps) {
   console.log(props);
   const { categories } = props.params;
   console.log(categories);
-  return (
-    <h1>Categoria Dinamica: {categories.map((category) => category + "-")}</h1>
-  );
+  return <h1>Categoria Dinamica: {categories}</h1>;
 }
