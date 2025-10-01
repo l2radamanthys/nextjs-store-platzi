@@ -1,32 +1,20 @@
-"use client";
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import Link from "next/link";
-import "./globals.css";
-import { Header } from "./components/Header";
+import { Inter } from "next/font/google";
+import { Header } from "./components/shared/Header";
+import { Footer } from "./components/shared/Footer";
 
-const geistSans = localFont({
-  src: "../../public/fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "../../public/fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log("RootLayout");
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={inter.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
