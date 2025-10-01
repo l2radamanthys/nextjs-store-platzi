@@ -18,7 +18,7 @@ export const getCollections = async () => {
     });
     return transformedCollections;
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 };
 

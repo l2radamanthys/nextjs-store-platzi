@@ -17,7 +17,7 @@ export const getProducts = async (id?: string): Promise<ProductType[]> => {
         id: product.id,
         gq_id: product.variants[0].id,
         title: product.variants[0].title,
-        description: product.description,
+        description: product.body_html,
         price: product.variants[0].price,
         image: product.images[0].src,
         quantity: product.variants[0].inventory_quantity,
@@ -41,7 +41,7 @@ export const getMainProducts = async () => {
       cache: "force-cache",
       next: {
         tags: ["main-products"],
-      }
+      },
     });
     const { products } = await response.json();
     return products;
