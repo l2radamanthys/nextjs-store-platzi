@@ -3,6 +3,7 @@ import { env } from "app/config/env";
 export const shopifyUrls = {
   products: {
     all: `${env.SHOPIFY_HOSTNAME}/admin/api/2025-07/products.json`,
+    mainProducts: `${env.SHOPIFY_HOSTNAME}/admin/api/2025-07/collections/520233124145/products.json`,
   },
   collections: {
     all: `${env.SHOPIFY_HOSTNAME}/admin/api/2025-07/smart_collections.json`,
