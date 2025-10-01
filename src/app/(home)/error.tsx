@@ -1,13 +1,8 @@
 "use client";
 
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 
-interface ErrorProps {
-  error: Error;
-  reset: () => void;
-}
-
-export default function Error(props: ErrorProps) {
+export default function Error(props: ErrorPageProps) {
   useEffect(() => {
     // Log the error to an error reporting service
     console.error(props.error);

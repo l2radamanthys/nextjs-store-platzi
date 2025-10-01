@@ -11,7 +11,6 @@ const getProducts = async () => {
         }),
       }
     );
-    throw new Error("Failed to fetch products");
     const { products } = await response.json();
     return products;
   } catch (error) {
