@@ -1,3 +1,4 @@
+import { hostname } from "os";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -8,6 +9,14 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "src/sass")],
     prependData: `@import "main.sass"`,
+  },
+  images: {
+    remotePatterns: [
+      {
+        hostname: "cdn.shopify.com",
+        protocol: "https",
+      },
+    ],
   },
 };
 
