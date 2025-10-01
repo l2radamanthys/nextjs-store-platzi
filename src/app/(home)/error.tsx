@@ -2,17 +2,25 @@
 
 import { useEffect } from "react";
 
-export default function Error(props: ErrorPageProps) {
+interface ErrorProps {
+  error: Error;
+  reset: () => void;
+}
+
+export default function Error({ error, reset }: ErrorProps) {
   useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(props.error);
+    console.log(error);
   }, []);
 
   return (
-    <div style={{ padding: "10rem" }}>
-      <h1>:(</h1>
+    <div
+      style={{
+        padding: "10rem",
+      }}
+    >
+      <h1>:c</h1>
       <p>Ha ocurrido un error</p>
-      <button onClick={props.reset}>Reintentar</button>
+      <button onClick={reset}>Intentar de nuevo</button>
     </div>
   );
 }

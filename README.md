@@ -5,3 +5,4 @@ Practica del curso de Platzi "Next.js: Framework de React para producción" basa
 ## Enlaces de interes
 
 - [Dashboard Shopify Pruebas](https://dev.shopify.com/dashboard)
+- [Admin Shopify Pruebas](https://admin.shopify.com)
