@@ -30,6 +30,7 @@ export const getProductsByCollection = async (id: string) => {
       }),
     });
     const { products } = await response.json();
+
     return products;
   } catch (error) {
     console.error(error);

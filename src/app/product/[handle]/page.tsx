@@ -1,5 +1,6 @@
 import { ProductView } from "app/components/Product/ProductView";
 import { getProducts } from "app/services/shopify/products";
+import { redirect } from "next/navigation";
 
 interface ProductPageProps {
   params: {
@@ -12,6 +13,11 @@ interface ProductPageProps {
 
 export default async function ProductPage({ searchParams }: ProductPageProps) {
   const id = searchParams.id;
+
+  // if (!id) {
+  //   return redirect("/store");
+  // }
+
   const product = await getProducts(id);
   console.log(product);
   return <ProductView product={product[0]} />;
