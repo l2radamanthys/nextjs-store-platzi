@@ -1,16 +1,16 @@
 "use client";
 import { useState } from "react";
 import styles from "./NewAccountForm.module.sass";
-import { handleCreateUser } from "app/actions/intex";
+import { handleCreateUser } from "app/actions";
 
 export const NewAccountForm = () => {
   const [errors, setErrors] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    handleCreateUser(formData);
+    await handleCreateUser(formData);
   };
 
   return (
@@ -19,13 +19,13 @@ export const NewAccountForm = () => {
       <form className={styles.NewAccountForm__form} onSubmit={handleSubmit}>
         <input
           type="text"
-          name="first_name"
+          name="firstName"
           placeholder="Name"
           disabled={loading}
         />
         <input
           type="text"
-          name="last_name"
+          name="lastName"
           placeholder="Lastname"
           disabled={loading}
         />
